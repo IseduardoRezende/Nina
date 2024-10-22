@@ -2,7 +2,7 @@
 
 ![nina2Git](https://github.com/user-attachments/assets/29f9f382-1471-4983-bb42-271b737655cb)
 
-<h1>Nina is a generic library for fluent construction of objects of any type.</h1>
+<h1>Nina is a library for fluent generic construction of objects of any type.</h1>
 
 <h2>Implementation Example(s):</h2>
 
