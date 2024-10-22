@@ -8,23 +8,10 @@
 	<Title>Nina</Title>
 	<Description>Nina is a library for fluent generic construction of objects of any type.</Description>
 	<PackageProjectUrl></PackageProjectUrl>
-	<PackageIcon>nina2Git.jpg</PackageIcon>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<RepositoryUrl>https://github.com/IseduardoRezende/Nina</RepositoryUrl>
 	<PackageTags>builder;fluent builder;nina;object;</PackageTags>
 	<PackageId>Nina-LF</PackageId>
 	<Product>Nina</Product>
 	<PackageReleaseNotes>The first release with SetBuilder&lt;T&gt; class and WithProperty(...) methods.</PackageReleaseNotes>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Update="Docs\nina2Git.jpg">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Update="Docs\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
 </Project>
