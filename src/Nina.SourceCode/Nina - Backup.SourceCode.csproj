@@ -7,9 +7,8 @@
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	<Title>Nina</Title>
 	<Description>Nina is a library for fluent generic construction of objects of any type.</Description>
-	<PackageProjectUrl>https://www.nuget.org/packages/Nina-LF</PackageProjectUrl>
+	 <PackageProjectUrl>https://www.nuget.org/packages/Nina-LF</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/IseduardoRezende/Nina</RepositoryUrl>
-	<PackageIconUrl></PackageIconUrl>
 	<PackageTags>builder;fluent-builder;object-generator;object;tdd;test;values;.net</PackageTags>
 	<PackageId>Nina</PackageId>
 	<Product>Nina</Product>
