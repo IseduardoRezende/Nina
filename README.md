@@ -4,6 +4,8 @@
 
 ![Icon](https://raw.githubusercontent.com/IseduardoRezende/Nina/refs/heads/main/nina2GitNuget.jpg)
 
+* <h2>Install: https://www.nuget.org/packages/Nina</h3>
+
 <h2>Implementation Example(s):</h2>
 <br />
 
