@@ -1,8 +1,8 @@
 # Nina
 
-![Icon](https://raw.githubusercontent.com/IseduardoRezende/Nina/refs/heads/main/nina2Git.jpg).
-
 <h1>Nina is a library for fluent generic construction of objects of any type.</h1>
+
+![Icon](https://raw.githubusercontent.com/IseduardoRezende/Nina/refs/heads/main/nina2GitNuget.jpg)
 
 <h2>Implementation Example(s):</h2>
 <br />
