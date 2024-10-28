@@ -9,7 +9,7 @@
 	<Description>Nina is a library for fluent generic construction of objects of any type.</Description>	  	
 	<RepositoryUrl>https://github.com/IseduardoRezende/Nina</RepositoryUrl>
 	<PackageIconUrl>https://raw.githubusercontent.com/IseduardoRezende/Nina/refs/heads/main/nina2GitNuget.jpg</PackageIconUrl>
-	<PackageTags>builder;fluent-builder;object-generator;object;tdd;test;values;builder-pattern;method-chaining;.net</PackageTags>
+	<PackageTags>builder;fluent-builder;object-generator;object;tdd;test;values;builder-pattern;method-chaining;fluent-api;.net</PackageTags>
 	<PackageId>Nina</PackageId>
 	<Product>Nina</Product>
 	<PackageReleaseNotes>The first release with SetBuilder&lt;T&gt; class and WithProperty(...) methods.</PackageReleaseNotes>
@@ -17,4 +17,8 @@
 	<Authors>Eduardo_Rezende</Authors>
 	<PackageProjectUrl>https://www.nuget.org/packages/Nina/</PackageProjectUrl>
   </PropertyGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="Nina.Tests" />
+	</ItemGroup>
 </Project>
