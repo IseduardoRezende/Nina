@@ -8,10 +8,10 @@ namespace Nina.SourceCode
     internal static class TypeExtensions
     {
         /// <summary>
-        /// Set a <paramref name="propertyValue"/> for the <typeparamref name="TProperty"/> with <paramref name="propertyName"/>.
+        /// Sets a <paramref name="propertyValue"/> for an property with <paramref name="propertyName"/>.
         /// </summary>
         /// <typeparam name="T">Any type with default constructor.</typeparam>
-        /// <typeparam name="TProperty">The property type to be set.</typeparam>
+        /// <typeparam name="TProperty">The type of the property to be set.</typeparam>
         /// <param name="type">The <see cref="Type"/> of <typeparamref name="T"/></param>.
         /// <param name="propertyName">The property name.</param>
         /// <param name="propertyValue">The property value to be set.</param>
@@ -59,7 +59,7 @@ namespace Nina.SourceCode
         /// <summary>
         /// Indicates whether the <paramref name="propertyValue"/> is valid for <paramref name="property"/>.
         /// </summary>
-        /// <typeparam name="TProperty">The property type to be set.</typeparam>
+        /// <typeparam name="TProperty">The type of the property to be set.</typeparam>
         /// <param name="property">The target property.</param>
         /// <param name="propertyValue">The property value.</param>
         /// <returns>
