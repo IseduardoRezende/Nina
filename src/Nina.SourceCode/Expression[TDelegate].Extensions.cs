@@ -14,10 +14,14 @@ namespace Nina.SourceCode
         /// <typeparam name="TProperty">The defined property.</typeparam>
         /// <param name="property">The property.</param>
         /// <returns>The <typeparamref name="TProperty"/> name.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="InvalidCastException"></exception>
         internal static string GetPropertyName<T, TProperty>(this Expression<Func<T, TProperty>> property)
             where T : new()
         {            
+            if (property is null)
+                throw new ArgumentNullException(nameof(property), "The expression must not be null.");
+
             var memberExpression = property.Body as MemberExpression;
 
             if (memberExpression is null) 
@@ -33,10 +37,14 @@ namespace Nina.SourceCode
         /// <typeparam name="TProperty">The defined property.</typeparam>
         /// <param name="property">The property.</param>
         /// <returns>The <typeparamref name="TProperty"/> name.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="InvalidCastException"></exception>
         internal static string GetPropertyName<T, TProperty>(this Expression<Func<T, ICollection<TProperty>>> property)
             where T : new()
-        {            
+        {
+            if (property is null)
+                throw new ArgumentNullException(nameof(property), "The expression must not be null.");
+
             var memberExpression = property.Body as MemberExpression;
 
             if (memberExpression is null)
@@ -52,10 +60,14 @@ namespace Nina.SourceCode
         /// <typeparam name="TProperty">The defined property.</typeparam>
         /// <param name="property">The property.</param>
         /// <returns>The <typeparamref name="TProperty"/> name.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="InvalidCastException"></exception>
         internal static string GetPropertyName<T, TProperty>(this Expression<Func<T, ICollection<ICollection<TProperty>>>> property)
             where T : new()
         {
+            if (property is null)
+                throw new ArgumentNullException(nameof(property), "The expression must not be null.");
+
             var memberExpression = property.Body as MemberExpression;
 
             if (memberExpression is null)
