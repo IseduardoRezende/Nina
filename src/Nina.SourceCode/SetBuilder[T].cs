@@ -12,12 +12,15 @@ namespace Nina.SourceCode
         /// <summary>
         /// The <typeparamref name="T"/> object.
         /// </summary>
-        protected readonly T _t = new();
+        protected readonly T _t;
 
         /// <summary>
         /// Initializes a new instance of <see cref="SetBuilder{T}"/> class.
         /// </summary>
-        public SetBuilder() { }
+        public SetBuilder()
+        {
+            _t = new();
+        }
 
         /// <summary>
         /// Builds the <typeparamref name="T"/> object.
@@ -42,7 +45,7 @@ namespace Nina.SourceCode
         /// Returns the current <see cref="SetBuilder{T}"/> instance to allow for method chaining.
         /// </returns>
         public SetBuilder<T> WithProperty<TProperty>(Expression<Func<T, TProperty>> property, Func<TProperty, TProperty> setter)
-        {            
+        {
             var propertyName = property.GetPropertyName();
             var propertyValue = setter.Invoke(default!);
             typeof(T).SetProperty(propertyName, propertyValue, _t);
@@ -113,7 +116,7 @@ namespace Nina.SourceCode
         /// </returns>
         public SetBuilder<T> WithProperty<TProperty>(Expression<Func<T, ICollection<TProperty>>> property, ICollection<TProperty> setter)
         {
-            var propertyName = property.GetPropertyName();                       
+            var propertyName = property.GetPropertyName();
             typeof(T).SetProperty(propertyName, setter, _t);
             return this;
         }
@@ -131,18 +134,22 @@ namespace Nina.SourceCode
         /// <returns>
         /// Returns the current <see cref="SetBuilder{T}"/> instance to allow for method chaining.
         /// </returns>
-        public SetBuilder<T> WithProperty<TProperty>(Expression<Func<T, ICollection<ICollection<TProperty>>>> property, Action<ICollection<ICollection<Func<TProperty, TProperty>>>> setter)
+        public SetBuilder<T> WithProperty<TProperty>(Expression<Func<T, ICollection<ICollection<TProperty>>>> property, Action<ICollection<Action<ICollection<Func<TProperty, TProperty>>>>> setter)
         {
             var propertyName = property.GetPropertyName();
 
-            var collections = new List<ICollection<Func<TProperty, TProperty>>>();
+            var collections = new List<Action<ICollection<Func<TProperty, TProperty>>>>();
             setter.Invoke(collections);
 
-            var propertyValue = collections.Select(cf =>
+            var propertyValue = collections.Select(c =>
             {
-                return cf.Select(c =>
+                var internCollections = new List<Func<TProperty, TProperty>>();
+
+                c.Invoke(internCollections);
+
+                return (ICollection<TProperty>)internCollections.Select(f =>
                 {
-                    return c.Invoke(default!);
+                    return f.Invoke(default!);
                 }).ToList();
             }).ToList();
 
@@ -163,7 +170,7 @@ namespace Nina.SourceCode
         /// </returns>
         public SetBuilder<T> WithProperty<TProperty>(Expression<Func<T, ICollection<ICollection<TProperty>>>> property, ICollection<ICollection<TProperty>> setter)
         {
-            var propertyName = property.GetPropertyName();           
+            var propertyName = property.GetPropertyName();
             typeof(T).SetProperty(propertyName, setter, _t);
             return this;
         }
