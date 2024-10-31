@@ -39,7 +39,7 @@ namespace Nina.SourceCode
                 throw new ArgumentException($"The property '{propertyName}' must be settable.", nameof(propertyName));
 
             if (!IsValidPropertyValue(property, propertyValue))
-                throw new ArgumentException($"The property value '{propertyValue}' is not valid for property '{propertyName}'.", nameof(propertyValue));
+                throw new ArgumentException($"The property value '{propertyValue}' is not valid for property '{propertyName}' with type '{property}'.", nameof(propertyValue));
 
             property.SetValue(obj, propertyValue);
         }
