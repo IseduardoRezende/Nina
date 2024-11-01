@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 
 namespace Nina.SourceCode
 {
@@ -89,7 +88,7 @@ namespace Nina.SourceCode
         {
             var propertyName = property.GetPropertyName();
 
-            var collection = new Collection<Func<TProperty, TProperty>>();
+            var collection = new List<Func<TProperty, TProperty>>();
             setter.Invoke(collection);
 
             var propertyValue = collection.Select(c =>
