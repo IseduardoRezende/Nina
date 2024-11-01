@@ -43,6 +43,17 @@ namespace Nina.Tests
         }
 
         [Fact]
+        public void SetProperty_WhenPropertyNotSettable_ThrowsArgumentException()
+        {
+            Person person = new();
+
+            Assert.Throws<ArgumentException>(() =>
+            {
+                TypeExtensions.SetProperty(typeof(Person), nameof(person.Secret), "Afraid of dark", person);
+            });
+        }
+
+        [Fact]
         public void SetProperty_WhenNullObject_ThrowsArgumentNullException()
         {
             Person person = null!;
